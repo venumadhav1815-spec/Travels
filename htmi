@@ -1,0 +1,56 @@
+Act as a Full-Stack Web Developer. I want to build a comprehensive, modern, all-in-one transportation and travel platform named "OneTravel" (a combination of Uber, Rapido, AbhiBus, and RedBus).
+
+Please generate the code and structure for the following 5 files:
+1. `index.html` (Main entry point and structure)
+2. `styles.css` (Modern, clean, responsive UI design using Tailwind or modern CSS)
+3. `main.js` (Core JavaScript logic, tab switching, form handling, state management)
+4. `App.jsx` (A complete React single-page dashboard component summarizing the user interface)
+5. `schema.sql` (PostgreSQL/MySQL database schema for storing users, rides, bus bookings, and drivers)
+
+---
+
+### Key Requirements & Features for "OneTravel":
+
+#### 1. Navigation & Services
+- Top Navbar with Logo ("OneTravel"), Service Tabs, Search Bar, User Profile, and Booking History button.
+- Service Selection Tabs:
+  - 🚗 **Cabs / Autos (Uber Style)**: Pickup, Drop, Ride Options (Sedan, SUV, Auto), Live fare estimate.
+  - 🏍️ **Bike Taxi (Rapido Style)**: Quick bike rides, single helmet option, express booking, low price fare.
+  - 🚌 **Intercity Buses (RedBus / AbhiBus Style)**: From City, To City, Journey Date, Seat Layout Selector (Sleeper/Seater), Amenities filter.
+  - 📦 **Parcel / Delivery**: Sender/Receiver address, parcel weight/type selector.
+
+#### 2. Features per File:
+
+- **`index.html`**:
+  - Semantic HTML5 structure.
+  - Includes Google Fonts (Inter/Poppins) and FontAwesome icons CDN.
+  - Interactive hero section with a quick tab switcher for Cabs, Bikes, and Buses.
+  - Live mock map placeholder container for cabs/bikes.
+  - Bus seat layout grid visualizer (interactive 2x2 sleeper/seater selection).
+
+- **`styles.css`**:
+  - Modern dark/light theme options with vibrant accent colors (Uber black/yellow, Rapido yellow, Redbus red styling highlights).
+  - Responsive layout for mobile, tablet, and desktop screens.
+  - Card designs for driver details, vehicle tracking, fare breakdown, and ticket summary.
+
+- **`main.js`**:
+  - Tab switcher logic (switches dynamic booking forms between Bike, Cab, Bus, and Parcel).
+  - Dynamic Fare Calculator based on distance/vehicle type.
+  - Interactive seat selector logic for bus booking (updates total price dynamically).
+  - Dynamic search filtering and mock booking confirmation modal.
+
+- **`App.jsx`**:
+  - Clean React functional component.
+  - Uses `useState` and `useEffect` for managing selected service, pickup/drop locations, ride state, and bus seat selection.
+  - Renders dynamic cards: Ride Booking, Driver Details Card, Live Status Banner, and Final E-Ticket Modal.
+
+- **`schema.sql`**:
+  - Production-ready relational SQL database schema.
+  - Tables:
+    1. `users` (id, name, email, phone, wallet_balance, created_at)
+    2. `drivers` (id, name, phone, vehicle_type, vehicle_number, rating, live_lat, live_lng)
+    3. `routes` (id, source, destination, distance_km, base_price)
+    4. `bookings` (id, user_id, service_type ['CAB', 'BIKE', 'BUS', 'PARCEL'], source, destination, status, total_fare, created_at)
+    5. `bus_seats` (id, booking_id, bus_number, seat_number, status ['AVAILABLE', 'BOOKED'])
+
+Please generate clean, fully functional, well-commented code for all 5 files.
